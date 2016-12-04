@@ -18,7 +18,7 @@ class CashRegister
     def apply_discount
         subtotal = @total
         discount = @discount * 0.01
-        subtotal = (subtotal * (@discount * 0.01))
+        subtotal = subtotal * discount
         @total = (@total - subtotal).to_i
         return "After the discount, the total comes to $#{@total}." if subtotal > 0
         'There is no discount to apply.'
